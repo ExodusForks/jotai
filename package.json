@@ -18,7 +18,9 @@
     "./effect": {
       "types": "./effect.d.ts",
       "default": "./effect.js"
-    }
+    },
+    "./*": "./*",
+    "./*.js": "./*.js"
   },
   "files": [
     "**"
