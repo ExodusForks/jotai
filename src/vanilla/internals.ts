@@ -683,8 +683,10 @@ const buildStore = (
         const aState = ensureAtomState(a)
         for (const d of getMountedOrPendingDependents(a, aState, mountedMap)) {
           const dState = ensureAtomState(d)
-          invalidatedAtoms.set(d, dState.n)
-          stack.push(d)
+          if (invalidatedAtoms.get(d) !== dState.n) {
+            invalidatedAtoms.set(d, dState.n)
+            stack.push(d)
+          }
         }
       }
     })
