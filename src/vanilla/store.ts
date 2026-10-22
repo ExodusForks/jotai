@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import type { Atom, WritableAtom } from './atom.ts'
 import {
   INTERNAL_buildStoreRev1 as INTERNAL_buildStore,
@@ -102,7 +103,8 @@ export function getDefaultStore(): PrdOrDevStore {
   if (!defaultStore) {
     defaultStore = createStore()
     if (import.meta.env?.MODE !== 'production') {
-      ;(globalThis as any).__JOTAI_DEFAULT_STORE__ ||= defaultStore
+      ;(globalThis as any).__JOTAI_DEFAULT_STORE__ ||
+        ((globalThis as any).__JOTAI_DEFAULT_STORE__ = defaultStore)
       if ((globalThis as any).__JOTAI_DEFAULT_STORE__ !== defaultStore) {
         console.warn(
           'Detected multiple Jotai instances. It may cause unexpected behavior with the default store. https://github.com/pmndrs/jotai/discussions/2044',

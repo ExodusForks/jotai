@@ -3,7 +3,7 @@
   "description": "👻 Primitive and flexible state management for React",
   "private": true,
   "type": "module",
-  "version": "2.12.5-exodus.3",
+  "version": "2.12.5-exodus.5",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
